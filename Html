@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Wealth Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    :root {
+        --navy: #1a3a52;
+        --light-navy: #2c5f7f;
+        --light-bg: #f8f9fa;
+        --white: #ffffff;
+        --text: #2c3e50;
+        --text-light: #6c757d;
+        --border: #e9ecef;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.8;
+        color: var(--text);
+        overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+        background: var(--white);
+        padding: 2rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        height: 45px;
+        width: auto;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 3rem;
+        list-style: none;
+        align-items: center;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 400;
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: var(--navy);
+    }
+
+    .contact-link {
+        color: var(--navy);
+        font-weight: 500;
+    }
+
+    /* Hero */
+    .hero {
+        margin-top: 105px;
+        min-height: 65vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: var(--light-bg);
+        padding: 8rem 4rem;
+    }
+
+    .hero-content {
+        max-width: 1000px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 300;
+        color: var(--navy);
+        line-height: 1.3;
+        margin-bottom: 2.5rem;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: var(--text-light);
+        font-weight: 300;
+        line-height: 1.9;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Content Sections */
+    section {
+        padding: 8rem 4rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .section-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--light-navy);
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: var(--navy);
+        margin-bottom: 2rem;
+        letter-spacing: -0.5px;
+        line-height: 1.3;
+    }
+
+    .section-text {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        font-weight: 300;
+        line-height: 1.9;
+        max-width: 900px;
+    }
+
+    /* Two Column Layout */
+    .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: start;
+    }
+
+    .content-block {
+        margin-bottom: 4rem;
+    }
+
+    .content-block:last-child {
+        margin-bottom: 0;
+    }
+
+    .block-title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--navy);
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.3px;
+    }
+
+    .block-text {
+        font-size: 1rem;
+        color: var(--text-light);
+        font-weight: 300;
+        line-height: 1.9;
+    }
+
+    /* Service Detail Sections */
+    .service-detail {
+        margin-top: 5rem;
+        padding-top: 5rem;
+        border-top: 1px solid var(--border);
+    }
+
+    .service-detail h3 {
+        font-size: 2rem;
+        font-weight: 400;
+        color: var(--navy);
+        margin-bottom: 3rem;
+        letter-spacing: -0.4px;
+    }
+
+    .service-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+    }
+
+    .service-item {
+        padding: 2rem 0;
+    }
+
+    .service-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--light-navy);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    .service-item h4 {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--navy);
+        margin-bottom: 1rem;
+    }
+
+    .service-item p {
+        font-size: 1rem;
+        color: var(--text-light);
+        font-weight: 300;
+        line-height: 1.8;
+    }
+
+    /* Single Column Service Items */
+    .single-col-service {
+        padding: 3rem 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .single-col-service:first-child {
+        border-top: none;
+    }
+
+    /* Image Placeholder */
+    .image-placeholder {
+        width: 100%;
+        height: 500px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-size: 0.95rem;
+        font-weight: 300;
+        border: 2px dashed var(--border);
+    }
+
+    /* Sketch Style Placeholder */
+    .sketch-placeholder {
+        width: 100%;
+        height: 600px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-light);
+        font-size: 0.9rem;
+        font-weight: 300;
+        border: 2px dashed var(--border);
+        position: relative;
+    }
+
+    .sketch-placeholder::before {
+        content: '✏️';
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Background Sections */
+    .bg-light {
+        background: var(--light-bg);
+    }
+
+    /* Credentials */
+    .credentials {
+        font-size: 1.05rem;
+        color: var(--light-navy);
+        font-weight: 500;
+        margin-bottom: 2rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+        text-align: center;
+        padding: 8rem 4rem;
+    }
+
+    .cta-section .section-title {
+        margin-bottom: 2.5rem;
+    }
+
+    .cta-link {
+        color: var(--navy);
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        border-bottom: 1px solid var(--navy);
+        padding-bottom: 2px;
+        transition: opacity 0.3s;
+    }
+
+    .cta-link:hover {
+        opacity: 0.7;
+    }
+
+    /* Footer */
+    footer {
+        background: var(--white);
+        padding: 4rem;
+        border-top: 1px solid var(--border);
+    }
+
+    .footer-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 5rem;
+    }
+
+    .footer-logo {
+        height: 40px;
+        width: auto;
+        margin-bottom: 2rem;
+    }
+
+    .footer-text {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        font-weight: 300;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--navy);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-section a {
+        display: block;
+        color: var(--text-light);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 300;
+        margin-bottom: 0.75rem;
+        transition: color 0.3s;
+    }
+
+    .footer-section a:hover {
+        color: var(--navy);
+    }
+
+    .footer-bottom {
+        max-width: 1400px;
+        margin: 3rem auto 0;
+        padding-top: 3rem;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-light);
+        font-size: 0.85rem;
+        font-weight: 300;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .footer-links a {
+        color: var(--text-light);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+        color: var(--navy);
+    }
+
+    .disclaimer {
+        max-width: 1400px;
+        margin: 2rem auto 0;
+        color: var(--text-light);
+        font-size: 0.8rem;
+        font-weight: 300;
+        line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        nav, section, footer {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .two-col, .service-grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .hero {
+            padding: 4rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <svg class="logo" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="deltaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#1a3a52;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#2c5f7f;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path d="M105 25 L35 155 C29 166 38 173 51 168 L135 125 C150 118 145 103 133 90 L105 25 Z" fill="url(#deltaGrad)"/>
+                <path d="M103 60 L70 125 L115 108 C121 106 120 99 114 95 Z" fill="#FFFFFF"/>
+                <text x="180" y="95" font-family="Montserrat, sans-serif" font-size="52" font-weight="600" letter-spacing="2.5" fill="#1a3a52">DELTA</text>
+                <text x="180" y="140" font-family="Montserrat, sans-serif" font-size="32" font-weight="500" letter-spacing="4.5" fill="#1a3a52">WEALTH</text>
+            </svg>
+            <ul class="nav-links">
+                <li><a href="#advisory">Advisory Services</a></li>
+                <li><a href="#approach">Our Approach</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="mailto:info@deltawealthmgt.com" class="contact-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+```
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Sophisticated Investment Solutions for Dynamic Families at Moments of Change</h1>
+        <p>We provide comprehensive wealth management and planning for busy professionals navigating life's pivotal transitions, delivering clarity and strategic guidance when it matters most.</p>
+    </div>
+</section>
+
+<!-- Advisory Services Intro -->
+<section id="advisory">
+    <div class="section-label">Advisory Services</div>
+    <h2 class="section-title">Building Wealth Through Moments of Transition</h2>
+    <p class="section-text">We partner with dynamic families and busy professionals during pivotal moments—career advancement, equity compensation, inheritance, and wealth accumulation. Our approach combines sophisticated investment strategies with comprehensive planning, tailored to the unique complexity of evolving lives.</p>
+
+    <div class="two-col" style="margin-top: 5rem;">
+        <div class="image-placeholder">
+            [Lifestyle Image - Professional/Family]
+        </div>
+        <div>
+            <p class="section-text">Our practice centers on delivering customized solutions through an independent, client-first model. We utilize open architecture to provide access to institutional-quality investments, tax-efficient strategies, and comprehensive coordination across your financial life.</p>
+            <p class="section-text" style="margin-top: 2rem;">From navigating complex compensation structures to integrating alternative investments, we bring clarity to complexity and help you capitalize on opportunity during life's most important transitions.</p>
+        </div>
+    </div>
+
+    <!-- Investment Strategy -->
+    <div class="service-detail">
+        <h3>Investment Strategy</h3>
+        <p class="section-text">We construct portfolios designed for tax efficiency, capital preservation, and long-term growth,
+```      
